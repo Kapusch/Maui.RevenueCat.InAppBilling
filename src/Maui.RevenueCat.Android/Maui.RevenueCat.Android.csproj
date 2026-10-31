@@ -24,14 +24,14 @@
 		<DebugType>embedded</DebugType>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<EmbedAllSources>true</EmbedAllSources>
-		<Version>10.16.1.0</Version>
-		<PackageReleaseNotes>10.16.1.0: RevenueCat Android SDK updated from 10.1.2 to 10.16.1. Notable upstream core-SDK changes: BillingClient connection moved off the main thread, showInAppMessages guarded against BillingClient runtime crashes, several OutOfMemory fixes around cached offerings/ETag responses, interface default methods made usable from Java in all published modules, unified StoreReplacementMode API. Full changelog: https://github.com/RevenueCat/purchases-android/releases. POM dependency list is unchanged from 10.1.2. 10.1.2.2: the RevenueCat AAR is now consumed via AndroidMavenLibrary (fetched from Maven Central when the binding itself is built) with POM-driven Java dependency verification, and the committed Jars were removed - shipped binaries are byte-identical to 10.1.2.1, nothing changes for consumers.</PackageReleaseNotes>
+		<Version>10.30.1.0</Version>
+		<PackageReleaseNotes>10.30.1.0: RevenueCat Android SDK updated from 10.16.1 to 10.30.1 (the 10.x maintenance line, still on BillingClient 8.3). Notable upstream core-SDK changes: dropped Billing callbacks after a disconnection are fixed, requests no longer hang when the server stops responding, non-subscription transactions report their display name and store transaction ID, the cached offerings response moved out of SharedPreferences to reduce memory usage, and the ASSIGNED ownership type is decoded instead of dropping the subscription from CustomerInfo. Full changelog: https://github.com/RevenueCat/purchases-android/releases. POM dependency changes: androidx.startup:startup-runtime and kotlinx-coroutines-android are new, now referenced as Xamarin.AndroidX.Startup.StartupRuntime and Xamarin.KotlinX.Coroutines.Android at versions that keep the existing AndroidX/Kotlin package graph unchanged. 10.16.1.0: RevenueCat Android SDK updated from 10.1.2 to 10.16.1. Notable upstream core-SDK changes: BillingClient connection moved off the main thread, showInAppMessages guarded against BillingClient runtime crashes, several OutOfMemory fixes around cached offerings/ETag responses, interface default methods made usable from Java in all published modules, unified StoreReplacementMode API. Full changelog: https://github.com/RevenueCat/purchases-android/releases. POM dependency list is unchanged from 10.1.2. 10.1.2.2: the RevenueCat AAR is now consumed via AndroidMavenLibrary (fetched from Maven Central when the binding itself is built) with POM-driven Java dependency verification, and the committed Jars were removed - shipped binaries are byte-identical to 10.1.2.1, nothing changes for consumers.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<!--The AAR is downloaded from Maven Central and its POM drives Java dependency
 		verification, so every RevenueCat bump cross-checks the PackageReference list below.-->
-		<AndroidMavenLibrary Include="com.revenuecat.purchases:purchases" Version="10.16.1" />
+		<AndroidMavenLibrary Include="com.revenuecat.purchases:purchases" Version="10.30.1" />
 		<!--RevenueCat uses Poko only as a compile-time Gradle plugin and @Poko is
 		source-retention, so the POM's runtime dependency has no bytecode footprint.
 		Referencing a binding for it caused #83 and #114.-->
@@ -55,6 +55,8 @@
 		<PackageReference Include="Xamarin.Kotlin.Parcelize.Runtime" Version="2.0.21.4" />
     <PackageReference Include="Xamarin.KotlinX.Serialization.Json" Version="1.7.3.5" />
     <PackageReference Include="Xamarin.KotlinX.Coroutines.Core" Version="1.10.2.3" />
+    <PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.10.2.3" />
+    <PackageReference Include="Xamarin.AndroidX.Startup.StartupRuntime" Version="1.2.0.7" />
     <PackageReference Include="Xamarin.GooglePlayServices.Auth.BlockStore" Version="116.4.0.8" />
 
     <!--fixed amazon warnings-->
