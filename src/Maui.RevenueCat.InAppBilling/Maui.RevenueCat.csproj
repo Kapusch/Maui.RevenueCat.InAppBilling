@@ -68,7 +68,7 @@ ADDED
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios' Or '$(TargetFramework)' == 'net9.0-maccatalyst'">
-    <PackageReference Include="Kebechet.Maui.RevenueCat.iOS" Version="5.83.1" />
+    <PackageReference Include="Kebechet.Maui.RevenueCat.iOS" Version="5.99.2" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
