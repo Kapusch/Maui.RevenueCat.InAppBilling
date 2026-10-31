@@ -27,24 +27,29 @@ public static class Program
         // alive, which makes the iOS registrar emit `_OBJC_CLASS_$_X`
         // references in registrar.o. The native linker then has to resolve
         // each one against RevenueCat.framework's symbol table.
-        _ = typeof(RCAdDisplayed);
-        _ = typeof(RCAdFailedToLoad);
-        _ = typeof(RCAdFormat);
-        _ = typeof(RCAdLoaded);
-        _ = typeof(RCAdOpened);
-        _ = typeof(RCAdRevenue);
-        _ = typeof(RCAdRevenuePrecision);
-        _ = typeof(RCAdTracker);
+        _ = typeof(AdDisplayed);
+        _ = typeof(AdFailedToLoad);
+        _ = typeof(AdFormat);
+        _ = typeof(AdLoaded);
+        _ = typeof(AdOpened);
+        _ = typeof(AdRevenue);
+        _ = typeof(AdRewardPromptAccepted);
+        _ = typeof(AdRewardPromptShown);
+        _ = typeof(MediatorName);
         _ = typeof(RCAttribution);
+        _ = typeof(RCBillingPlanType);
         _ = typeof(RCConfiguration);
         _ = typeof(RCConfigurationBuilder);
         _ = typeof(RCCustomPaywallImpressionParams);
+        _ = typeof(RCCustomerAttribute);
         _ = typeof(RCCustomerInfo);
         _ = typeof(RCDangerousSettings);
         _ = typeof(RCEntitlementInfo);
         _ = typeof(RCEntitlementInfos);
+        _ = typeof(RCIdentity);
+        _ = typeof(RCIdentitySource);
+        _ = typeof(RCInstallmentsInfo);
         _ = typeof(RCIntroEligibility);
-        _ = typeof(RCMediatorName);
         _ = typeof(RCNonSubscriptionTransaction);
         _ = typeof(RCOffering);
         _ = typeof(RCOfferings);
@@ -57,8 +62,11 @@ public static class Program
         _ = typeof(RCPurchaseParams);
         _ = typeof(RCPurchaseParamsBuilder);
         _ = typeof(RCPurchases);
+        _ = typeof(RCPurchasesAuthentication);
+        _ = typeof(RCPurchasesAuthenticationDelegate);
         _ = typeof(RCPurchasesDelegate);
         _ = typeof(RCPurchasesDiagnostics);
+        _ = typeof(RCRevocationReason);
         _ = typeof(RCStoreProduct);
         _ = typeof(RCStoreProductDiscount);
         _ = typeof(RCStoreTransaction);
